@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Created by Aakash on 10/26/2016.
  */
 public class Array_MaximuAbsoluteDifference {
-    public int maxArrMine(ArrayList<Integer> A) {
+    public int maxArr(ArrayList<Integer> A) {
         int max = 0;
         int start = 0;
         for(int i : A.subList(0, A.size() - 1)) {
@@ -20,7 +20,7 @@ public class Array_MaximuAbsoluteDifference {
         return max;
     }
 
-    public int maxArr(ArrayList<Integer> A) {
+    public int maxArrOptimized(ArrayList<Integer> A) {
 
         int max1 = Integer.MIN_VALUE;
         int min1 = Integer.MAX_VALUE;
