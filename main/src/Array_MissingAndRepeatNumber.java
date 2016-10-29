@@ -40,6 +40,26 @@ public class Array_MissingAndRepeatNumber {
         return myList;
     }
 
+    public ArrayList<Integer> repeatedNumberWithoutSpace(final List<Integer> a) {
+        int len = a.size();
+        long expectedSquareSum = len * (len + 1) * (2*len + 1)/6;
+        long actualSquareSum = 0;
+        ArrayList<Integer> myList = new ArrayList<Integer>();
+        long Expectedsum =  len * (len + 1) / 2;
+        long actualSum = 0;
+        for(int i : a) {
+            actualSum += i;
+            actualSquareSum += Math.pow(i, 2);
+        }
+        long diff2 = actualSquareSum - expectedSquareSum;
+        long diff1 = actualSum - Expectedsum;
+        long repeat = (diff2/diff1 + diff1)/2;
+        long miss = repeat - diff1;
+        myList.add((int)repeat);
+        myList.add((int)miss);
+        return myList;
+    }
+
     public static void main(String[] args) {
         Array_MissingAndRepeatNumber array_missingAndRepeatNumber = new Array_MissingAndRepeatNumber();
         final ArrayList<Integer> input =  new ArrayList<Integer>();
@@ -49,7 +69,7 @@ public class Array_MissingAndRepeatNumber {
         input.add(1);
         input.add(2);
         input.add(3);
-        input2  = array_missingAndRepeatNumber.repeatedNumberOptimized(input);
+        input2  = array_missingAndRepeatNumber.repeatedNumberWithoutSpace(input);
         for(int v : input2) {
             System.out.println("v = " + v);
         }
