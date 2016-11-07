@@ -25,6 +25,44 @@ public class SpiralMatrix {
         return result;
     }
 
+    public ArrayList<ArrayList<Integer>> generateMatrix(int a) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        int mat[][] = new int[a][a];
+        int counter = 1;
+        int row = 0;
+        int col = 0;
+        int dir = 1;
+        boolean rowcol = true;
+        while (counter <= a*a) {
+            if(rowcol) {
+                while(col < a && col >= 0 && mat[row][col] == 0) {
+                    mat[row][col] = counter++;
+                    col += dir;
+                }
+                rowcol = false;
+                col -= dir;
+                row += dir;
+            } else {
+                while(row < a && row >= 0 && mat[row][col] == 0) {
+                    mat[row][col] = counter++;
+                    row += dir;
+                }
+                row -= dir;
+                col -= dir;
+                dir *= -1;
+                rowcol = true;
+            }
+        }
+        for (int i = 0; i < a; i++) {
+            ArrayList<Integer> temp = new ArrayList<>();
+            for (int j = 0; j < a; j++) {
+                temp.add(mat[i][j]);
+            }
+            result.add(temp);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         SpiralMatrix spiralMatrix = new SpiralMatrix();
         Scanner sc = new Scanner(System.in);
