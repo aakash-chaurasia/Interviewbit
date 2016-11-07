@@ -33,7 +33,7 @@ public class Array_Flip {
                 }
             }
         }
-        ArrayList<Integer> output = new ArrayList<Integer>();
+        ArrayList<Integer> output = new ArrayList<>();
         if(finalStart != -1) {
             output.add(finalStart+1);
             output.add(finalEnd+1);
