@@ -1,3 +1,5 @@
+package Array.Math;
+
 /**
  * Created by Aakash on 10/25/2016.
  */
