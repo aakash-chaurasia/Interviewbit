@@ -1,4 +1,4 @@
-package DynamicProgramming.suffix_prefix_dp;
+package DynamicProgramming.MatrixDp;
 
 import java.util.ArrayList;
 import java.util.Scanner;
