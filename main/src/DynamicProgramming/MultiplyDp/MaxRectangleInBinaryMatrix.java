@@ -1,4 +1,4 @@
-package DynamicProgramming.MatrixDp;
+package DynamicProgramming.MultiplyDp;
 
 import java.util.ArrayList;
 import java.util.Scanner;
